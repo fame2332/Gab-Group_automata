@@ -17,6 +17,7 @@ interface AutomataContextType {
   startSimulation: (input: string) => void;
   stopSimulation: () => void;
   stepSimulation: () => void;
+  stepBackward: () => void;
   getCurrentAutomaton: () => any;
 }
 
@@ -224,6 +225,17 @@ export const AutomataProvider: React.FC<{ children: ReactNode }> = ({ children }
     }));
   };
 
+  const stepBackward = () => {
+    if (!simulationState.isRunning || simulationState.currentStep <= 0) {
+      return;
+    }
+
+    setSimulationState(prev => ({
+      ...prev,
+      currentStep: prev.currentStep - 1
+    }));
+  };
+
   return (
     <AutomataContext.Provider
       value={{
@@ -241,6 +253,7 @@ export const AutomataProvider: React.FC<{ children: ReactNode }> = ({ children }
         startSimulation,
         stopSimulation,
         stepSimulation,
+        stepBackward,
         getCurrentAutomaton
       }}
     >

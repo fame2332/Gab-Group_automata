@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAutomata } from '../context/AutomataContext';
-import { Play, Pause, SkipForward, StopCircle } from 'lucide-react';
+import { Play, Pause, SkipForward, SkipBack, StopCircle } from 'lucide-react';
 
 const Simulation: React.FC = () => {
   const { 
     simulationState, 
-    stepSimulation, 
+    stepSimulation,
+    stepBackward,
     stopSimulation, 
     selectedType 
   } = useAutomata();
@@ -60,6 +61,14 @@ const Simulation: React.FC = () => {
             </div>
             
             <div className="flex items-center space-x-2">
+              <button 
+                onClick={stepBackward}
+                className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+                disabled={simulationState.currentStep <= 0}
+              >
+                <SkipBack className="h-5 w-5 text-indigo-600" />
+              </button>
+
               {!isAutoPlaying ? (
                 <button 
                   onClick={() => setIsAutoPlaying(true)}
