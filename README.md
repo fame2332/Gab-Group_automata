@@ -20,13 +20,8 @@ This project allows users to:
 ## Getting Started
 1. **Clone the repository:**
    ```bash
-   git clone 
-https://github.com/fame2332/Gab-Group_automata
-
-
-
-
-   cd (location)
+   git clone https://github.com/fame2332/Gab-Group_automata
+  cd (location)
    ```
 2. **Install dependencies:**
    ```bash
