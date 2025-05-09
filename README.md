@@ -20,8 +20,13 @@ This project allows users to:
 ## Getting Started
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/automata-theory-explorer.git
-   cd automata-theory-explorer
+   git clone 
+https://github.com/fame2332/Gab-Group_automata
+
+
+
+
+   cd (location)
    ```
 2. **Install dependencies:**
    ```bash
@@ -42,7 +47,6 @@ This project allows users to:
 ## Technologies Used
 - React + TypeScript
 - Tailwind CSS
-- d3-graphviz (for automata visualization)
 - Vite (build tool)
 
 ## Credits
